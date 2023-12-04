@@ -1,11 +1,14 @@
 name: Our first python CI
+
 on: push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
 jobs:
   My-first-CI:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
@@ -18,7 +21,7 @@ jobs:
         pip install -r requirements.txt
     - name: Lint with Ruff
       run: |
-        # ***add your command to run ruff here***
+        ruff src/fairsharer.py
     - name: Test with pytest
       run: |
 	pytest
