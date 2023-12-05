@@ -1,6 +1,6 @@
 name: Our first python CI
 
-on: 
+on:
   push:
     branches: [ "main" ]
   pull_request:
@@ -25,4 +25,4 @@ jobs:
         ruff src/fairsharer.py
     - name: Test with pytest
       run: |
-	pytest
+        pytest src/test_fairsharer.py
